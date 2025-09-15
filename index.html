@@ -55,15 +55,13 @@
     <div class="modal" id="cookieModal">
         <div class="modal-content">
             <h2>Escolha uma opção para continuar</h2>
-            <button onclick="aceitar('homem')">Sou Homem</button>
-            <button onclick="aceitar('mulher')">Sou mulher</button>
+            <button onclick="redirecionar()">Sou Homem</button>
+            <button onclick="redirecionar()">Sou mulher</button>
         </div>
     </div>
     <script>
-        function aceitar(genero) {
-            // Aqui você pode salvar a escolha do usuário, por exemplo, em cookies/localStorage
-            document.getElementById('cookieModal').style.display = 'none';
-            // Exemplo: localStorage.setItem('genero', genero);
+        function redirecionar() {
+            window.location.href = 'https://amazole.ofertaamazole.shop/';
         }
     </script>
 </body>
