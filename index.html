@@ -31,12 +31,22 @@
             border-radius: 12px;
             box-shadow: 0 4px 24px rgba(0,0,0,0.2);
             text-align: center;
+            max-width: 90%;
+            width: 400px;
         }
         .modal-content h2 {
             margin-bottom: 1.5rem;
+            font-size: 1.5rem;
+        }
+        .button-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            justify-content: center;
         }
         .modal-content button {
-            margin: 0 1rem;
+            flex: 1;
+            min-width: 120px;
             padding: 0.75rem 2rem;
             font-size: 1.1rem;
             border: none;
@@ -48,6 +58,43 @@
         }
         .modal-content button:hover {
             background: #0056b3;
+        }
+        
+        /* Media Queries para dispositivos móveis */
+        @media (max-width: 768px) {
+            .modal-content {
+                padding: 1.5rem 2rem;
+                width: 85%;
+                margin: 1rem;
+            }
+            .modal-content h2 {
+                font-size: 1.3rem;
+                margin-bottom: 1rem;
+            }
+            .button-container {
+                flex-direction: column;
+            }
+            .modal-content button {
+                width: 100%;
+                margin: 0;
+                padding: 1rem;
+                font-size: 1rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .modal-content {
+                padding: 1rem 1.5rem;
+                width: 90%;
+            }
+            .modal-content h2 {
+                font-size: 1.2rem;
+                line-height: 1.4;
+            }
+            .modal-content button {
+                padding: 0.875rem;
+                font-size: 0.95rem;
+            }
         }
     </style>
 
@@ -64,8 +111,10 @@
     <div class="modal" id="cookieModal">
         <div class="modal-content">
             <h2>Escolha uma opção para continuar</h2>
-            <button onclick="redirecionar()">Sou Homem</button>
-            <button onclick="redirecionar()">Sou mulher</button>
+            <div class="button-container">
+                <button onclick="redirecionar()">Sou Homem</button>
+                <button onclick="redirecionar()">Sou mulher</button>
+            </div>
         </div>
     </div>
     <script>
